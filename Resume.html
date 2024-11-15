@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+    <title>Resume</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="fav_icon.png" rel="icon" type="image/png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        .head{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            overflow: hidden;
+            padding: 20px;
+            margin: 30px;
+            font-size: 3rem;
+            color: rgb(0, 50, 255);
+        }
+        nav i{
+          outline: none;
+          font-size: 2.5rem;
+          color: rgb(00, 50, 255);  
+        }
+        #visit{
+            color: rgb(00, 50, 255);
+        }
+        body{
+            width: 100%;
+            height: auto;
+            background-color: black;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            /* width: 100%; */
+            padding: 10px;
+            margin: 10px;
+            color: white;
+            flex-wrap: wrap;
+
+        }
+        .container h1{
+            font-size: 2.8rem;
+            margin-left: 10px;
+        }
+        .container h2{
+            font-size: 2rem;
+        }
+        .container p{
+            font-size: 1.5rem;
+        }
+        .edu{
+            width: 45%;
+            border-left: 6px solid  rgb(00, 50, 255);
+            margin-left: 20px;
+        }
+        .exp{
+            width: 45%;
+            border-left: 6px solid  rgb(00, 50, 255);
+            margin-left: 20px;
+        }
+        @media  screen and (max-width:480px) {
+            .edu,.exp {
+                margin-left: 5px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .container h1{
+                font-size: 1.5rem;
+            }
+            .container h2{
+                font-size: 1.2rem;
+            }
+            .container p{
+                font-size: 0.8rem;
+            }
+            .skills{
+                margin-left: 5px;
+            }
+        }
+        .head{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            overflow: hidden;
+            padding: 20px;
+            margin: 30px;
+            font-size: 2rem;
+            color: rgb(0, 50, 255);
+        }
+        .head h1{
+            font-size: 3rem;
+            margin-top: 20px;
+        }
+        .head p{
+            font-size: 1.5rem;
+        }
+        .box{
+            padding: 15px;
+            margin: 15px;
+            gap: 10px;
+            border: 0.1px solid grey;
+        }
+        /* skiils */
+        /* progress nar */
+        .skills{
+            color: #f1f1f1;
+            display: grid;
+            grid-template-columns: 1fr 1fr ;
+            width: 80%;
+            grid-column-gap: 70px;
+            align-items: center;
+            /* text-align: center; */
+            justify-content: center;
+            position: relative;
+            left: 20px;
+            margin-left: 50px;
+        }
+        .progress-bar {
+            margin-top: 5px;
+       position: relative;
+       margin-bottom: 30px;
+       background-color: white;
+       border-radius: 8px;
+}
+
+.progress {
+  height: 20px;
+  /* background-color: #f1f1f1; */
+  border-radius: 5px;
+  color: white;
+}
+
+.progress-bar .progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 5px;
+  background-color: rgb(00, 50, 255);
+  animation: mymove 2s linear 1 ;
+}
+@keyframes mymove {
+  from {
+width: 1%;}
+  to {
+width: 75%;}
+}
+.skill {
+  padding: 2px;
+  font-weight: bold;
+  color: white;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+.h{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    margin: 10px;
+    padding: 15px;
+    font-size: 1.5rem;
+}
+.edu a {
+    color: blue; /* Change link color to blue */
+    text-decoration: none; /* Optional: removes underline */
+}
+.edu a:hover {
+    text-decoration: underline; /* Optional: adds underline on hover */
+}
+
+/* CSS for mobile view */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .edu h1 {
+        font-size: 24px;
+        text-align: center;
+    }
+    
+    .box {
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    .box h2, .box p {
+        text-align: center;
+        font-size: 18px;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="logggg.png" class="logo">
+        <ul id="x">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#" id="visit">Portfolio</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="getintouch.html">Contact</a></li>
+        </ul>
+        <img src="theme_sun.png" class="favico1">
+            <img src="theme_moon.png" class="favico2">
+            <label class="switch">
+              <input type="checkbox" onclick="myFunction()">
+              <span class="slider round"></span>
+            </label>
+    </nav>
+    <div class="head">
+        <h1>Portfolio</h1>
+    </div>
+    <div class="container" style="border: none;">
+        <div class="edu">
+            <h1 style="color: rgb(00, 50, 255);">Education</h1>
+            <div class="box">
+            <h2>B.Tech. in IIoT</h2>
+            <p>St. Vincent Pallotti College of Engineering and Technology</p>
+           </div>
+           <div class="box">
+            <h2>12th</h2>
+            <p>St. Paul Junior College</p>
+           </div>
+           <div class="box">
+             <h2>10th</h2>
+             <p>Kurvey's New Model Public School</p>
+           </div>
+        </div>
+        <div class="exp">
+            <h1 style="color: rgb(00, 50, 255);">Experience</h1>
+           <div class="box">
+            <h2>Project Intern</h2>
+            <p> Signal Processing and Communication Research Center (SPCRC) – International Institute of Information Technology(IIIT) Hyderabad</p>
+           </div>
+    </div>
+    </div>
+
+    <div class="container" style="border: none;">
+        <div class="edu">
+            <h1 style="color: rgb(00, 50, 255);">Certifications</h1>
+            <div class="box">
+                <h2>Python Certification</h2>
+                <p>CodeChef</p>
+                <a href="https://www.codechef.com/certificates/public/660c56b" target="_blank">Learn Python</a><br>
+                <a href="https://www.codechef.com/certificates/public/2902eeb" target="_blank">Practice Python </a><br>
+                <a href="https://www.codechef.com/certificates/public/5b52aac" target="_blank">Problem solving in Python</a>
+            </div>
+            <div class="box">
+                <h2>C++ Programming</h2>
+                <p>DiSHA Computer Institute</p>
+                <a href="https://drive.google.com/file/d/10SGZP8_gQqlQcfsAIHPHjwAweHEGW6GP/view?usp=sharing" target="_blank">C & C++</a>
+            </div>
+            <div class="box">
+                <h2>Web development</h2>
+                <p>Great Learning</p>
+                <a href="html tutrial certifcate.pdf" target="_blank">HTML Tutorial</a><br>
+                <a href="css tutorial certificate.pdf" target="_blank">CSS Tutorial</a><br>
+                <a href="css properties  certificate.pdf" target="_blank">CSS Properties</a><br>
+                <a href="js certificate.pdf" target="_blank">JavaScript</a>
+            </div>
+            <div class="box">
+            <h2>Machine Learning</h2>
+            <p>Prutor IIT Kanpur</p>
+            <a href="prutor_ml.pdf" target="_blank">Machine Learning</a>
+           </div>
+           <div class="box">
+            <h2>Hands on experienceon Internet of Things</h2>
+            <p>NPTEL Lab Certification</p>
+            <a href="iot workshopnptel.pdf" target="_blank">NPTEL</a>
+           </div>
+           <div class="box">
+             <h2>Industrial Apporach in Electronics</h2>
+             <p>Electronics Study Center</p>
+             <a href="Electronic workshop (1).pdf" target="_blank">Electronics</a>
+           </div>
+           <div class="box">
+            <h2> Microprocessors and Microcontrollers</h2>
+            <p>NPTEL Online Certification</p>
+            <a href="Microprocessors and Microcontrollers.pdf" target="_blank">NPTEL</a>
+          </div>
+        </div>
+        <div class="exp">
+            <h1 style="color: rgb(00, 50, 255);">Skills</h1>
+           <div class="box">
+            <h2>C Programming</h2>
+           </div>
+           <div class="box">
+            <h2>C++ Programming</h2>
+           </div>
+           <div class="box">
+            <h2>Python Programming</h2>
+           </div>
+           <div class="box">
+            <h2>Arduino</h2>
+           </div>
+           <div class="box">
+            <h2>Microcontrollers</h2>
+           </div>
+           <div class="box">
+            <h2>Embedded Systems</h2>
+           </div>
+           <div class="box">
+            <h2>Embedded C Programming</h2>
+           </div>
+           <div class="box">
+            <h2>HTML</h2>
+           </div>
+           <div class="box">
+            <h2>CSS</h2>
+           </div>
+        </div>
+    </div>
+    <script>
+        function myfun() {
+          var x = document.getElementById("x");
+          var y = document.getElementById("bar");
+          if(x.style.display == "block") {
+            x.style.display = "none";
+          }
+          else {
+            x.style.display = "block";
+          }
+          
+        }
+        function myFunction() {
+                 var element = document.body;
+                 element.classList.toggle("dark-mode"); 
+              }
+      </script>
+</body>
+</html>
