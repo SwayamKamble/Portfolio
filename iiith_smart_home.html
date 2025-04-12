@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Home Environmental Monitoring System </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="images/fav_icon.png" rel="icon" type="image/png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav i {
+            outline: none;
+            font-size: 2.5rem;
+            color: rgb(00, 50, 255);
+        }
+
+        #visit {
+            color: rgb(00, 50, 255);
+        }
+
+        body {
+            background-color: black;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            height: 250px;
+            flex-wrap: wrap;
+            color: white;
+        }
+
+        .container h3 {
+            width: 100%;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .container h1 {
+            font-size: 4rem;
+            padding-top: 0;
+        }
+
+        .head {
+            position: relative;
+            left: 10px;
+            font-size: 1.5rem;
+            font-family: "poppins";
+            padding: 10px;
+        }
+
+        .dark-mode #hd {
+            color: rgba(0, 0, 0, 0.747);
+        }
+
+        .video-container {
+            width: 80%;
+            /* Adjust width as needed */
+            max-width: 800px;
+            /* Max width for larger screens */
+            margin: 20px auto;
+            /* Center the video container */
+            border: 2px solid rgb(00, 50, 255);
+            /* Border color */
+            border-radius: 10px;
+            /* Rounded corners */
+            overflow: hidden;
+            /* Hide overflow */
+        }
+
+        .video-container iframe {
+            width: 100%;
+            /* Full width */
+            height: 450px;
+            /* Adjust height as needed */
+        }
+
+        .project-details {
+            color: white;
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .project-details h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .project-details ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px auto;
+            width: 80%;
+        }
+
+        .image-gallery img {
+            width: 150px;
+            /* Adjust the width as needed */
+            height: auto;
+            /* Maintain aspect ratio */
+            margin: 10px;
+            border-radius: 10px;
+            /* Optional: add rounded corners */
+            transition: transform 0.3s;
+            /* Smooth hover effect */
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+            /* Scale image on hover */
+        }
+
+        .project-details {
+            color: white;
+            /* Default text color for dark mode */
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .dark-mode .project-details {
+            color: black;
+            /* Change text color for light mode */
+        }
+
+        .sys_arc {
+            height: 300px;
+            width: 700px;
+        }
+
+        .indoor_node {
+            height: 400px;
+            width: 500px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .oudoor_node {
+            height: 400px;
+            width: 500px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .actuation_node {
+            height: 400px;
+            width: 500px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .om2m {
+            height: 400px;
+            width: 700px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .dashboard {
+            height: 400px;
+            width: 700px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .web_page {
+            height: 400px;
+            width: 700px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .in_out_temp {
+            height: 400px;
+            width: 700px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .in_out_humi {
+            height: 400px;
+            width: 700px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .rain {
+            height: 400px;
+            width: 700px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .temp_humi {
+            height: 400px;
+            width: 700px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .side-by-side-images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .side-by-side-images .side-image {
+            height: 500px;
+            width: 300px;
+            object-fit: cover;
+
+        }
+
+        .grid-images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .grid-images .grid-image {
+            height: 200px;      
+            width: 300px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <img src="images/logggg.png" class="logo">
+        <ul id="x">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="Resume.html">Portfolio</a></li>
+            <li><a href="#" id="visit">Projects</a></li>
+            <li><a href="getintouch.html">Contact</a></li>
+        </ul>
+        <img src="images/theme_sun.png" class="favico1">
+        <img src="images/theme_moon.png" class="favico2">
+        <label class="switch">
+            <input type="checkbox" onclick="myFunction()">
+            <span class="slider round"></span>
+        </label>
+    </nav>
+    <a href="#" class="icon" onclick="myfun()"> <i id="bar" class="fa-sharp fa-solid fa-bars"></i> </a>
+    <a href="#" class="icon" onclick="closefunc()"> <i id="bar2" class="fa-solid fa-xmark"></i> </a>
+    <div class="container">
+        <h1 style="color: rgb(00, 50, 255);">Smart Home Environmental Monitoring System </h1>
+    </div>
+
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/syTri_NuucQ?si=LXXgJjr8o7QvPAZZ"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <div class="project-details">
+        <h2>Motivation Project </h2>
+        <p>The project seeks to address major issues in contemporary living spaces for increased efficiency,
+            comfort, and safety. Conventional approaches to safety and environmental monitoring are either
+            manual or do not have real-time reaction capabilities. For example, delayed fire alarms or
+            undiscovered gas leaks can result in disastrous situations. The suggested system makes homes
+            safer and more energy-efficient by automating environmental monitoring and reaction processes
+            with sensors and actuators. </p>
+        <p>Moreover, the incorporation of cloud-based platforms such as ThingSpeak and oneM2M facilitates
+            structured resource management and real-time data visualization. The project shows how
+            technology may be easily incorporated into daily life to enhance general well-being by utilizing
+            automation and the Internet of Things.</p>
+        <br>
+
+        <h2>List of Required Components</h2>
+        <ul>
+            <li><strong>Microcontroller (ESP32):</strong>Serves as the central processing unit, gathering data from
+                sensors
+                and sending it over Wi-Fi to cloud platforms.</li>
+        </ul>
+        <ul>
+            <li><strong>Sensors and Actuators :</strong></li>
+            <ul>
+                <li>Temperature & Humidity (DHT11): Monitors comfort levels. </li>
+                <li>Light Sensor (LDR): Measures lighting conditions to optimize energy usage.</li>
+                <li>Sound Sensor: Detects noise levels, ensuring a peaceful environment. </li>
+                <li>Gas Sensor (e.g., MQ series): Identifies the presence of harmful gases.</li>
+                <li>Flame Sensor: Detects fire hazards.</li>
+                <li>PIR Sensor: Tracks motion for security and automation. </li>
+                <li>Rain Sensor: Tracks rainfall for weather updates. </li>
+                <li>Relay: Trigger devices or controls appliances </li>
+                <li>Servo: Handles actuation tasks</li>
+                <li>OLED: Displays relevant data</li>
+            </ul>
+        </ul>
+        <ul>
+            <li><strong>Communication Platform:</strong></li>
+            <ul>
+                <li>Wi-Fi enabled by ESP32 for cloud data transfer.</li>
+            </ul>
+        </ul>
+
+        <ul>
+            <li><strong>Cloud Platforms: </strong></li>
+            <ul>
+                <li>ThingSpeak: Real-time data storage and visualization.</li>
+                <li>oneM2M: A standardized resource tree structure for efficient data management. </li>
+            </ul>
+        </ul>
+
+        <ul>
+            <li><strong>Dashboard Tools:</strong></li>
+            <ul>
+                <li>Grafana: Displays real-time and historical trends for data analysis. </li>
+                <li>Web/Mobile Applications: Provides user-friendly interfaces for interaction. </li>
+            </ul>
+        </ul>
+        <h2>System Architecture:</h2>
+        <img src="images/IIITH (14).jpg" alt="System Architecture" class="sys_arc">
+        <br>
+
+        <h2>Indoor Node</h2>
+        <p>The indoor node's purpose is to keep an eye on the home's environmental conditions and send out
+            safety alerts, especially in the event of a gas leak or fire. It operates independently, gathering
+            information, processing it, and sending out real-time alarms. </p>
+        <p>By keeping an eye on important variables including light intensity, temperature, humidity, gas levels,
+            sound, flame, and motion, the goal is to create a secure and cozy indoor environment. The node
+            guarantees quick hazard detection and promptly alerts the user. Circuit diagram is shown below.</p>
+        <img src="images/in_n.jpg" alt="Indoor node" class="indoor_node">
+
+        <h3>Components:</h3>
+        <ul>
+            <li><strong>Sensors: </strong></li>
+            <ul>
+                <li><strong>LDR (Light Dependent Resistor):</strong>Measures the intensity of light to optimize energy
+                    use. </li>
+                <li><strong>DHT (Temperature and Humidity Sensor): </strong>Tracks indoor comfort conditions.</li>
+                <li><strong>Sound Sensor:</strong>Monitors noise levels for maintaining a quiet environment.</li>
+                <li><strong>LPG Gas Sensor:</strong>Detects gas leaks, preventing potentially hazardous situations.
+                </li>
+                <li><strong>Flame Sensor: </strong>Alerts in case of fire. </li>
+                <li><strong>PIR Sensor (Passive Infrared):</strong> Detects human motion for security and automation.
+                </li>
+            </ul>
+            <li><strong>Microcontroller</strong></li>
+            <ul>
+                <li><strong>ESP32: </strong>Acts as the processing unit, collecting and transmitting data to cloud
+                    platforms. </li>
+            </ul>
+        </ul>
+        <a href="https://stagb.in/2ep9ja6" target="_blank">Click to see Code used in Indoor Node</a>
+        <br>
+
+
+        <h2>Outdoor Node: </h2>
+        <p>With an emphasis on weather and noise levels, the outdoor node collects environmental data from
+            the surrounding area. It offers information about environmental factors that may have an impact on
+            safety and comfort. </p>
+        <p>The goal is to help with weather forecasting and noise pollution studies by keeping an eye on external
+            environmental characteristics such as temperature, humidity, rainfall, light intensity, and sound
+            levels. Circuit Diagram is shown below.</p>
+        <img src="images/out_n.jpg" alt="outdoor node" class="oudoor_node">
+        <h3>Components:</h3>
+        <ul>
+            <li><strong>Sensors: </strong></li>
+            <ul>
+                <li><strong>DHT:</strong> Tracks temperature and humidity for weather analysis. </li>
+                <li><strong>Rain Sensor:</strong> Detects precipitation levels for weather updates..</li>
+                <li><strong>Sound Sensor:</strong> Monitors environmental noise pollution. </li>
+            </ul>
+            <li><strong>Microcontroller</strong></li>
+            <ul>
+                <li><strong>ESP32: </strong>Gathers data from sensors and transmits it to cloud platforms.</li>
+            </ul>
+            <li><strong>Communication Protocols:</strong></li>
+            <ul>
+                <li><strong>ThingSpeak: </strong>For data storage and visualization. </li>
+                <li><strong>OneM2M</strong>For structured resource management and integration with other nodes.</li>
+            </ul>
+        </ul>
+        <a href="https://stagb.in/azfumhq" target="_blank">Click to see Code used in Outdoor Node</a>
+
+        <!--  /////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+        <h2>Actuation Node: </h2>
+        <p>As the system's command center, the actuation node responds to notifications and controls
+            appliance automation in response to user input. </p>
+        <p>The goal is to regulate appliances like lights, fans, and ventilation systems for safety and energy
+            efficiency, as well as to coordinate responses to alerts (such as gas leaks or fires).Circuit diagram is
+            shown below.</p>
+        <img src="images/master_n.jpg" alt="master node" class="actuation_node">
+        <h3>Components:</h3>
+        <ul>
+            <li><strong>Actuators: </strong></li>
+            <ul>
+                <li>Servo Motor (controls vents for ventilation). </li>
+                <li>Buzzer (alerts users).</li>
+                <li>Water Sprayer (for fire suppression).</li>
+                <li>Relays (control appliances like lights and fans).</li>
+            </ul>
+            <li><strong>Microcontroller</strong></li>
+            <ul>
+                <li><strong>ESP32: </strong>Processes alerts and controls actuators based on MQTT commands. </li>
+            </ul>
+            <li><strong>Communication Protocols:</strong></li>
+            <ul>
+                <li><strong>MQTT:</strong>Subscribes to topics for receiving alerts and user commands. </li>
+            </ul>
+        </ul>
+        <a href="https://stagb.in/wjl0w2q" target="_blank">Click to see Code used in Actuation Node</a>
+        <br>
+
+        <h2>Possible Methods for Verifying the Implementation </h2>
+        <ol>
+            <li><Strong>Real-Time alerting: </Strong>To ensure prompt alerting, simulate situations like gas leaks or
+                loud
+                noises. </li>
+            <li><Strong>Actuation Testing:</Strong> Verify that sprinklers, fans, and alarms react precisely to
+                threshold
+                violations. </li>
+            <li><Strong>Dashboard Updates:</Strong> Confirm that Grafana consistently shows both historical and
+                real-time
+                data. </li>
+            <li><Strong>Integration: </Strong> Verify that cloud platforms can communicate with both interior and
+                outdoor
+                nodes.</li>
+        </ol>
+        <a href="https://stagb.in/6cungpn" target="_blank">Python Code for sending data from OM2M to PostgreSQL</a>
+        <img src="images/om2m.png" alt="OM2M resource tree" class="om2m">
+
+        <h2>Webpage: The Central Monitoring Hub </h2>
+        <p>The webpage is designed as the primary user interface for interacting with the Smart home
+            environmental monitoring system. Its primary purpose is to offer centralized real-time data
+            visualization and enable appliance control from a web platform.</p>
+        <h3>Purpose</h3>
+        <ul>
+            <li>To centralize real-time data monitoring.</li>
+            <li>Provide intuitive controls for appliances.</li>
+        </ul>
+        <h3>Key Features: </h3>
+        <ul>
+            <li><strong>Real-Time Data Charts: </strong>: Utilizes <strong>Grafana</strong> to fetch and display data
+                from the cloud
+                (ThingSpeak).</li>
+            <li><strong>Device Control: </strong>Offers MQTT-based buttons for controlling appliances.</li>
+            <li><strong>User-Friendly Design:</strong> Simplifies operation for seamless interaction. </li>
+        </ul>
+        <a href="https://stagb.in/2jwiyyj" target="_blank">Click to see code for webpage</a>
+        <br>
+        <img src="images/web_page.png" alt="Web page" class="web_page">
+
+        <br>
+        <h2>Mobile App: Extending the System on the Go</h2>
+        <p>The mobile app complements the webpage by offering a portable solution for monitoring and
+            controlling the system remotely.</p>
+        <h3>Purpose:</h3>
+        <ul>
+            <li>To enable system access anywhere. </li>
+            <li>Provide real-time updates and remote control capabilities. </li>
+        </ul>
+        <h3>Key Features: </h3>
+        <ul>
+            <li><strong>Control Commands: </strong>Uses MQTT to manage appliances directly. </li>
+            <li><strong>Data Monitoring:</strong> Displays parsed data from ThingSpeak. </li>
+            <li><strong>Alert Notifications:</strong>Sends hazard alerts (e.g., gas leaks or fire) directly to the user.
+            </li>
+        </ul>
+        <br>
+        <div class="side-by-side-images">
+            <img src="images/app_ss1.jpg" alt="Image 1" class="side-image">
+            <br>
+            <img src="images/app_ss2.jpg" alt="Image 2" class="side-image">
+        </div>
+        <h2>Grafana DashBoard: </h2>
+        <a href="https://stagb.in/41s8beq" target="_blank">Click to import json code for Dashboard</a>
+        <img src="images/dashboard.png" alt="Image 1" class="dashboard">
+
+        <h2>Integration and Data Flow </h2>
+        <h3>Data Collection: </h3>
+        <p>Indoor and outdoor sensor nodes continuously collect environmental data, including temperature,
+            humidity, light levels, and hazards like gas or flame presence. Immediate detection of hazards
+            ensures rapid response. </p>
+        <h3>Data Communication: </h3>
+        <p>The collected data is sent to the ThingSpeak and oneM2M platforms for storage and processing.
+            Alerts, including hazard warnings, are transmitted via MQTT and Telegram for user awareness.</p>
+        <h3>Data Visualization:</h3>
+        <p>Grafana, integrated with ThingSpeak, provides interactive and clear graphical representations of the
+            sensor data, helping users understand environmental conditions at a glance.</p>
+        <h3>System Control: </h3>
+        <h3>Control of appliances is facilitated through:</h3>
+        <ul>
+            <li>The<strong>webpage</strong> interface, which allows users to send MQTT commands. </li>
+            <li>The <strong>mobile app, </strong>, enabling remote management and monitoring of appliances.</li>
+        </ul>
+
+        <div class="side-by-side-images">
+            <img src="images/gas.jpeg" alt="gas alerts" class="side-image">
+            <img src="images/flame.jpeg" alt="flame alerts" class="side-image">
+        </div>
+
+        <h2>Data Analysis: </h2>
+        <h3>Temperature Comparison For indoor and outdoor node :</h3>
+        <p>The outdoor node shows a peak temperature around 11:00 AM as there is presence of direct sunlight
+            and the lowest temperature around 6:00 AM. The highest recorded temperature is 43°C, and the
+            lowest is 19°C.</p>
+        <p>For the indoor node, temperature variations are smaller, staying between 25°C and 27°C.</p>
+        <img src="images/in vs out temp.png" alt="In out Temperature" class="in_out_temp">
+
+        <br>
+        <h3>Humidity Comparison for Indoor and Outdoor Node </h3>
+        <p>The humidity trends for indoor and outdoor nodes are similar but with a slight offset. Around 11:00
+            AM, humidity is at its lowest due to higher temperatures.</p>
+        <img src="images/in out humi.png" alt="In out Humidity" class="in_out_humi">
+        <img src="images/temp_humi.png" alt="All temperature and Humidity " class="temp_humi">
+
+        <br>
+        <h3>Rain sensor analysis:</h3>
+        <p> The rain sensor detects some readings even without rain, likely due to morning dew between 10:00
+            and 11:00 AM. </p>
+        <img src="images/rain.png" alt="Rain" class="rain">
+
+        <h2>Prediction on Temperature and Humidity Data</h2>
+        <h3>Here we are using LSTM model for Prediction</h3>
+        <div class="grid-images">
+            <img src="images/in_temp_pred.png" alt="Image 1" class="grid-image">
+            <img src="images/out_temp_pred.png" alt="Image 2" class="grid-image">
+            <img src="images/in_humi_pred.png" alt="Image 3" class="grid-image">
+            <img src="images/out_humi_pred.png" alt="Image 4" class="grid-image">
+        </div>
+        <p>The RMSE values indicate the performance of the LSTM model in predicting temperature and 
+            humidity. The indoor temperature RMSE (0.0535) is significantly lower than outdoor temperature 
+            RMSE (0.1705), suggesting better accuracy for indoor predictions. Similarly, the model performs 
+            slightly better for outdoor humidity (0.8909) compared to indoor humidity (1.1630), highlighting room 
+            for improvement in humidity predictions. </p>
+
+
+        <h2>Conclusion</h2>
+        <p>IoT technologies integrated into the Smart Home Environmental Monitoring 
+            System ensure that modern homes are safer, more efficient, and more 
+            comfortable. The selection of sensors is a crucial component, directly 
+            influencing data accuracy, reliability, and ease of integration with the ESP32 
+            microcontroller.</p>
+        <p>Accordingly, based on observations and identified areas for improvement, the 
+            project emphasizes shifting to digital sensors where applicable. Digital 
+            options, such as I2C-based sensors, outperform their analog counterparts by 
+            reducing noise interference and ensuring precise, consistent readings. 
+            Specifically: </p>
+        <ul>
+            <li>Lux sensors are proposed as replacements for LDRs, providing better 
+                and more direct measurements of light intensity in lux. </li>
+            <li>Digital sound sensors are recommended to eliminate the fluctuations 
+                typically observed with analog sound sensors.</li>
+            <li>For gas monitoring, analog gravity sensors are preferred for their 
+                sensitivity and reliability, while remaining open to exploring digital 
+                alternatives. </li>
+        </ul>
+        <p>While the analog pins on the ESP32 occasionally exhibit inconsistent trends 
+            due to noise, these challenges have been largely mitigated through the use of 
+            digital communication protocols like I2C. The current DHT sensors for 
+            temperature and humidity have demonstrated reliable data collection and are 
+            recommended for continued use.</p>
+        <p>This transition to digital sensors enhances the system's accuracy, efficiency, 
+            and responsiveness to real-time environmental changes. Additionally, the 
+            system demonstrates cutting-edge smart living capabilities with its robust 
+            architecture of indoor, outdoor, and actuation nodes, seamlessly integrating 
+            with platforms like MQTT, ThingSpeak, oneM2M, and Grafana. </p>
+        <p>In conclusion, the Smart Home Environmental Monitoring System is a scalable, 
+            adaptable, and innovative solution for real-time monitoring and automation. 
+            The integration of digital sensors solidifies its position as a high-performance 
+            and reliable system, paving the way for safer, smarter, and more sustainable 
+            living environments.</p>
+        <h3>
+            Drive link:  <a href="https://drive.google.com/drive/folders/18Niiu58EhC5HV6eJxzWHJA4637tt0-Yt?usp=sharing" target="_blank">Drive link</a><br>
+            Google Colab link: <a href="https://colab.research.google.com/drive/1FjCND1cUa_f3N4fiPHiu8qD23MBWM4al?usp=sharing" target="_blank">Colab link</a>
+        </h3>
+    </div>
+
+    <script>
+        function myfun() {
+            var x = document.getElementById("x");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+        function myFunction() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+        }
+    </script>
+</body>
+
+</html>

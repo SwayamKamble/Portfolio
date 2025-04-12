@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> IoT Attendance System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="images/fav_icon.png" rel="icon" type="image/png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav i {
+            outline: none;
+            font-size: 2.5rem;
+            color: rgb(00, 50, 255);
+        }
+
+        #visit {
+            color: rgb(00, 50, 255);
+        }
+
+        body {
+            background-color: black;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            height: 250px;
+            flex-wrap: wrap;
+            color: white;
+        }
+
+        .container h3 {
+            width: 100%;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .container h1 {
+            font-size: 4rem;
+            padding-top: 0;
+        }
+
+        .head {
+            position: relative;
+            left: 10px;
+            font-size: 1.5rem;
+            font-family: "poppins";
+            padding: 10px;
+        }
+
+        .dark-mode #hd {
+            color: rgba(0, 0, 0, 0.747);
+        }
+
+        .video-container {
+            width: 80%;
+            /* Adjust width as needed */
+            max-width: 800px;
+            /* Max width for larger screens */
+            margin: 20px auto;
+            /* Center the video container */
+            border: 2px solid rgb(00, 50, 255);
+            /* Border color */
+            border-radius: 10px;
+            /* Rounded corners */
+            overflow: hidden;
+            /* Hide overflow */
+        }
+
+        .video-container iframe {
+            width: 100%;
+            /* Full width */
+            height: 450px;
+            /* Adjust height as needed */
+        }
+
+        .project-details {
+            color: white;
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .project-details h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .project-details ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px auto;
+            width: 80%;
+        }
+
+        .image-gallery img {
+            width: 150px;
+            /* Adjust the width as needed */
+            height: auto;
+            /* Maintain aspect ratio */
+            margin: 10px;
+            border-radius: 10px;
+            /* Optional: add rounded corners */
+            transition: transform 0.3s;
+            /* Smooth hover effect */
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+            /* Scale image on hover */
+        }
+
+        .project-details {
+            color: white;
+            /* Default text color for dark mode */
+            text-align: left;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .dark-mode .project-details {
+            color: black;
+            /* Change text color for light mode */
+        }
+
+        /* Other existing styles... */
+    </style>
+</head>
+
+<body>
+    <nav>
+        <img src="images/logggg.png" class="logo">
+        <ul id="x">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="Resume.html">Portfolio</a></li>
+            <li><a href="#" id="visit">Projects</a></li>
+            <li><a href="getintouch.html">Contact</a></li>
+        </ul>
+        <img src="images/theme_sun.png" class="favico1">
+        <img src="images/theme_moon.png" class="favico2">
+        <label class="switch">
+            <input type="checkbox" onclick="myFunction()">
+            <span class="slider round"></span>
+        </label>
+    </nav>
+    <a href="#" class="icon" onclick="myfun()"> <i id="bar" class="fa-sharp fa-solid fa-bars"></i> </a>
+    <a href="#" class="icon" onclick="closefunc()"> <i id="bar2" class="fa-solid fa-xmark"></i> </a>
+    <div class="container">
+        <h1 style="color: rgb(00, 50, 255);">IoT Attendance System</h1>
+    </div>
+
+    <div class="video-container">
+        <iframe 
+            src="https://www.youtube.com/embed/47xp-KqsWlY"
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+        </iframe>
+    </div>
+    
+
+
+    <div class="project-details">
+        <h1>IoT Attendance System: A Smart Solution for Automated Attendance Tracking</h1>
+        <h2>Introduction</h2>
+        <p>In today's fast-paced world, traditional attendance systems are being replaced by smart,
+            automated solutions that save time and reduce errors. The IoT Attendance System is a perfect example of how
+            technology can streamline processes,
+            offering a hassle-free way to track attendance. This project uses an ESP8266 microcontroller, RFID reader,
+            and a Google Sheet integration to log
+            attendance in real-time. It is designed for workplaces, schools, or any organization that values efficient
+            attendance management.</p>
+        <br>
+        <h2>Features of the IoT Attendance System</h2>
+        <ul>
+            <li><strong>RFID-Based Attendance</strong><br>
+                <p>The system uses RFID technology, enabling users to scan their ID cards for quick and reliable
+                    attendance logging.
+                    This eliminates manual errors and reduces the time required for record-keeping.</p>
+            </li>
+            <li><strong>Real-Time Data Storage</strong><br>
+                <p>Attendance data is sent directly to a Google Sheet, providing centralized, accessible records.
+                    This ensures transparency and enables administrators to access logs from anywhere.</p>
+            </li>
+            <li><strong>RFID-Based Attendance</strong><br>
+                <p>Unlike conventional attendance systems, this solution records both "in time" and "out time"
+                    during a specified operational timeframe. This dual-tracking feature ensures a more detailed log of
+                    attendance and time spent.</p>
+            </li>
+        </ul>
+        <br>
+        <h2>How It Works</h2>
+        <ul>
+            <li><strong>Entry Scanning</strong></li>
+            <ul>
+                <li>Users scan their RFID ID card on the connected RFID reader.</li>
+                <li>The system identifies the cardholder and logs the timestamp.</li>
+            </ul>
+            <li><strong>Data Transmission</strong></li>
+            <ul>
+                <li>The ESP8266 sends the user's name and timestamp to the Google Sheet via a pre-configured API.</li>
+            </ul>
+            <li><strong>Time Analysis</strong></li>
+            <ul>
+                <li>On the first scan within the operational timeframe, the system records the "in time."</li>
+                <li>On subsequent scans, it logs the "out time."</li>
+            </ul>
+        </ul>
+        <h2>System Architecture</h2>
+        <ul>
+            <li><strong>Hardware Components</strong></li>
+            <ul>
+                <li><strong>ESP8266 Microcontroller:</strong>Handles data processing and internet connectivity.</li>
+                <li><strong>RFID Reader:</strong>Scans the user's ID card and retrieves unique card details.</li>
+                <li><strong>LCD Display:</strong>Provides feedback, such as user name and successful scans.</li>
+            </ul>
+            <li><strong>Software Tools</strong></li>
+            <ul>
+                <li><strong>Google Sheets API:</strong>Enables real-time data storage in a cloud-based spreadsheet.</li>
+                <li><strong>Open-Source Firmware: </strong>Configurable code that manages RFID scanning and data
+                    transmission.</li>
+            </ul>
+        </ul>
+        <br>
+        <h2>Setup Instruction</h2>
+        <ul>
+            <li><strong>Hardware Setup</strong></li>
+            <p>Connect the RFID reader and LCD display to the ESP8266 microcontroller according to the circuit diagram.
+                Ensure proper power supply and connectivity.</p>
+            <li><strong>Code Configuration</strong></li>
+            <h4>Download the provided open-source firmware and:</h4>
+            <ul>
+                <li>Update it with your Google Sheets API credentials.</li>
+                <li>Configure the WiFi SSID and password for the ESP8266.</li>
+            </ul>
+            <li><strong>Deployment</strong></li>
+            <ul>
+                <li>Install the hardware at the desired location.</li>
+                <li>Distribute RFID cards to users.
+                </li>
+            </ul>
+        </ul>
+        <h2>Applications</h2>
+        <ul>
+            <li><strong>Workplaces:</strong>Streamline employee attendance tracking.</li>
+            <li><strong>Educational Institutions:</strong>Automate student attendance logs.</li>
+            <li><strong>Events:</strong>Keep track of attendee check-ins and check-outs.
+            </li>
+        </ul>
+
+        <h2>Future Enhancements</h2>
+        <h4>The IoT Attendance System is scalable and adaptable. Here are some potential upgrades:</h4>
+        <ul>
+            <li><strong>Biometric Authentication:</strong>Combine RFID with fingerprint scanning for added security.</li>
+            <li><strong>Offline Mode:</strong> Store data locally when WiFi is unavailable and sync it later.</li>
+            <li><strong>Mobile App Integration:</strong>Send email or SMS notifications for late arrivals or unscheduled check-outs.</li>
+            <li><strong>Alerts:</strong>Send email or SMS notifications for late arrivals or unscheduled check-outs.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>The IoT Attendance System is an innovative solution that demonstrates the power of IoT in simplifying everyday tasks.
+             Its real-time data storage, detailed time tracking, and ease of use make it ideal for organizations looking to upgrade their attendance processes. 
+             With potential for further enhancements, this system is a step towards smarter workplaces and institutions.</p>
+       
+
+    </div>
+
+    <script>
+        function myFunction() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+        }
+    </script>
+</body>
+
+</html>
