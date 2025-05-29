@@ -1,37 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   cursor: default;
 }
-
-a {
+a{
   text-decoration: none;
 }
-
-.hero {
+.hero{
   width: 100%;
   height: 100%;
   background-size: cover;
 }
-
-nav {
+nav{
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 30px 100px;
 }
-
-.logo {
+.logo{
   max-height: 100px;
   border-radius: 50%;
   z-index: 5;
 }
-
-.favico1 {
+.favico1{
   max-height: 34px;
   border-radius: 50%;
   mix-blend-mode: screen;
@@ -39,46 +33,38 @@ nav {
   top: 63px;
   right: 175px;
 }
-
-.favico2 {
+.favico2{
   max-height: 34px;
   border-radius: 50%;
   position: absolute;
   top: 61px;
   right: 50px;
 }
-
-nav ul li {
+nav ul li{
   list-style: none;
   display: inline-block;
   padding: 10px 20px;
 }
-
-nav ul li a {
+nav ul li a{
   color: white;
   position: relative;
   padding: 5px 0;
 }
-
-.dark-mode nav ul li a {
+.dark-mode nav ul li a{
   color: rgba(0, 0, 0, 0.747);
   position: relative;
   padding: 5px 0;
 }
-
-.dark-mode h2 {
+.dark-mode h2{
   color: rgba(0, 0, 0, 0.747);
 }
-
-.dark-mode p {
+.dark-mode p{
   color: rgba(0, 0, 0, 0.747);
 }
-
-nav ul li a:hover {
+nav ul li a:hover{
   color: #0032FF;
 }
-
-nav ul li a:after {
+nav ul li a:after{
   color: #fff;
   content: "";
   position: absolute;
@@ -89,12 +75,10 @@ nav ul li a:after {
   transition: .3s;
   bottom: 0;
 }
-
-nav ul li a:hover:after {
+nav ul li a:hover:after{
   width: 100%;
 }
-
-.btn {
+.btn{
   color: #fff;
   font-size: 15px;
   text-transform: uppercase;
@@ -109,30 +93,25 @@ nav ul li a:hover:after {
   border: 2px solid #0032FF;
   cursor: pointer;
 }
-
-.btn>i {
+.btn>i{
   font-size: 1rem;
   margin: 5px;
   color: white;
 }
-
-.btn>i:hover {
+.btn>i:hover{
   color: #0032FF;
 }
-
-.btn:hover {
+.btn:hover{
   background: transparent;
   border-color: #0032FF;
   color: #0032FF;
 }
-
-.content {
+.content{
   position: absolute;
   top: 35%;
   left: 8%;
 }
-
-.name:after {
+.name:after{
   color: #fff;
   content: "";
   position: absolute;
@@ -143,24 +122,22 @@ nav ul li a:hover:after {
   transition: .3s;
   bottom: 210px;
 }
-
-.name:hover:after {
+.name:hover:after{
   width: 300px;
 }
 
-.content .title {
+.content .title{
   color: #1f1f25;
   font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 4px;
   display: inline-block;
   margin-bottom: 20px;
-  background: linear-gradient(120deg, #1c99fe 20.69%, #7644ff 50.19%, #fd4766 79.69%);
+  background: linear-gradient(120deg, #1c99fe 20.69%, #7644ff 50.19%,#fd4766 79.69%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-.content h1 {
+.content h1{
   /* color: #fff; */
   font-size: 75px;
   font-weight: 900;
@@ -168,19 +145,16 @@ nav ul li a:hover:after {
   text-transform: inherit;
   width: 70%;
 }
-
-.content h1 span {
+.content h1 span{
   color: #0032FF;
 }
-
-.content p {
+.content p{
   width: 55%;
   color: #757575;
   margin-top: 25px;
   margin-bottom: 30px;
 }
-
-.soc {
+.soc{
   display: flex;
   flex-direction: column;
   float: right;
@@ -191,63 +165,54 @@ nav ul li a:hover:after {
   bottom: 20px;
   cursor: pointer;
 }
-
-.soc ul {
+.soc ul{
   list-style: none;
   position: absolute;
   bottom: 1px;
   right: 10px;
 }
-
-.soc ul li a {
+.soc ul li a{
   text-decoration: none;
   color: white;
 }
 
-.soc>ul>li>a>#github:hover {
+.soc>ul>li>a>#github:hover{
   color: rgba(216, 216, 216, 0.486);
   cursor: pointer;
 }
-
-.soc>ul>li>a>#linkedin:hover {
+.soc>ul>li>a>#linkedin:hover{
   color: rgb(93, 149, 229);
   cursor: pointer;
 }
-
-.dark-mode .soc>ul>li>a>#github {
+.dark-mode .soc>ul>li>a>#github{
   color: rgba(0, 0, 0, 0.747);
   cursor: pointer;
 }
-
-.dark-mode .soc>ul>li>a>#linkedin {
+.dark-mode .soc>ul>li>a>#linkedin{
   color: rgba(0, 0, 0, 0.747);
   cursor: pointer;
 }
-
-.dark-mode .soc>ul>li>a>#github:hover {
+.dark-mode .soc>ul>li>a>#github:hover{
   color: rgb(0, 0, 0);
   cursor: pointer;
 }
-
-.dark-mode .soc>ul>li>a>#linkedin:hover {
+.dark-mode .soc>ul>li>a>#linkedin:hover{
   color: rgb(5, 40, 90);
   cursor: pointer;
 }
 
-#bar {
+#bar{
   display: none;
   color: white;
   float: right;
   font-size: 2.5rem;
 }
-
-#bar2 {
+#bar2{
   display: none;
   color: white;
   float: right;
   font-size: 2.5rem;
 }
-
 .switch {
   position: relative;
   display: inline-block;
@@ -285,15 +250,15 @@ nav ul li a:hover:after {
   transition: .4s;
 }
 
-input:checked+.slider {
+input:checked + .slider {
   background-color: #0032FF;
 }
 
-input:focus+.slider {
+input:focus + .slider {
   box-shadow: 0 0 1px #0032FF;
 }
 
-input:checked+.slider:before {
+input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
@@ -306,13 +271,11 @@ input:checked+.slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-
 .hover-underline-animation {
   display: inline-block;
   position: relative;
   color: rgb(00, 50, 255);
 }
-
 .hover-underline-animation::after {
   content: '';
   position: absolute;
@@ -325,93 +288,17 @@ input:checked+.slider:before {
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
-
 .hover-underline-animation:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
 
-
-
-.dark-mode {
+.dark-mode{
   background-color: white;
   color: rgba(0, 0, 0, 0.747);
 }
 
-a:link {
-  color: white;
+a:link{
+color: white;
 }
 
-
-@media screen and (max-width:480px) {
-  #span {
-    font-size: 4rem;
-  }
-
-  #bar {
-    display: inline-block;
-    position: relative;
-    right: 10px;
-    bottom: 80px;
-    padding: 5px;
-  }
-
-  #bar2 {
-    display: none;
-    position: relative;
-    right: 10px;
-    bottom: 80px;
-    padding: 5px;
-  }
-
-  ul {
-    display: none;
-    float: right;
-    z-index: 99;
-    background-color: #1f1f25;
-    transition: all 3s ease-in-out;
-  }
-
-  .btn {
-    padding: 2px;
-
-  }
-
-  #btn1 {
-    position: absolute;
-    padding: 5px;
-    font-size: 0.8rem;
-    left: 2rem;
-    top: 8rem;
-
-  }
-
-  .soc {
-    display: block;
-    float: right;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-  }
-
-  .logo {
-    position: absolute;
-    left: 2rem;
-    top: 2rem;
-    width: 4rem;
-  }
-
-  #dark {
-    position: absolute;
-    left: 10rem;
-    top: 3rem;
-
-  }
-
-  #bar {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-  }
-
-}

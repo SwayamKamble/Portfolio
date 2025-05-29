@@ -15,9 +15,9 @@
                 font-family: 'Poppins', sans-serif;
             }
             nav i{
-            outline: none;
-            font-size: 2.5rem;
-            color: rgb(00, 50, 255);  
+                outline: none;
+                font-size: 2.5rem;
+                color: rgb(00, 50, 255);  
             }
             #visit{
                 color: rgb(00, 50, 255);
@@ -36,57 +36,70 @@
                 align-items: center;
             }
 
+            .container h1{
+                text-align: center;
+                padding: 20px;
+                font-size: 3rem;
+                color: rgb(0, 50, 255);
+                margin-bottom: 40px;
+            }
+
+            .boxes{
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 20px;
+                width: 90%;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
             .container>.boxes>details{
-                margin: 20px;
+                margin: 10px;
                 background-color: rgb(198, 200, 201);
                 border-radius: 5px; 
                 color: black;
                 padding: 20px;
                 word-wrap: break-word;
+                transition: all 0.3s ease;
             }
+            
+            .container>.boxes>details:hover{
+                background-color: rgb(00, 50, 255);
+                box-shadow: 1px 2px 10px rgb(00, 50, 255);
+                color: white;
+            }
+            
             .container>.boxes>details:hover>a{
                 color: red;
                 cursor: pointer;
             }
-            .boxes{
-                width: 500px;
-                position: absolute;
-                top: 12rem;
-            }
-            @media screen and (max-width:768px) { 
-                .boxes{
-                width: 350px;
-                margin-left: 2px;
-            }
-            .container>h1{
-            font-size: 2rem;
-            }
-            .container>p{
-            display: none;
-            }
-            }
-            .container>.boxes>details:hover{
-                background-color: rgb(00, 50, 255);
-                box-shadow: 1px 2px 10px rgb(00, 50, 255);
-            }
+            
             .container>.boxes>details>summary{
-                font-weight:600;
+                font-weight: 600;
                 letter-spacing: 1px;
+                cursor: pointer;
             }
-            .container>h1{
-                position: absolute;
-                top: 6rem;
-                text-align: center;
-                padding: 20px;
-                font-size: 3rem;
 
+            /* Media query for tablets and larger screens */
+            @media screen and (min-width: 768px) { 
+                .boxes{
+                    grid-template-columns: 1fr 1fr;
+                    width: 90%;
+                    max-width: 1200px;
+                }
             }
-            .container>p{
-                position: absolute;
-                top: 5rem;
-                padding: 20px;
-                margin: 20px;
-                font-size: 1rem;
+            
+            /* Media query for mobile devices */
+            @media screen and (max-width: 767px) { 
+                .boxes{
+                    width: 95%;
+                }
+                .container h1{
+                    font-size: 2rem;
+                }
+                .container>p{
+                    display: none;
+                }
             }
         </style>
     </head>
@@ -109,8 +122,9 @@
         </nav>
         <a href="#" class="icon" onclick="myfun()"> <i id="bar" class="fa-sharp fa-solid fa-bars"></i> </a>
         <a href="#" class="icon" onclick="closefunc()"> <i id="bar2" class="fa-solid fa-xmark"></i> </a>
+        
         <div class="container">
-            <h1 style="color: rgb(0, 50, 255);">Projects</h1>
+            <h1>Projects</h1>
             <div class="boxes">
                 <details>
                     <summary>Self- Portfolio Website</summary>
@@ -148,10 +162,9 @@
                     <p>Awarded at the College Startup Expo (Engineers Day)</p>
                     <a href="street_light.html">Click to View</a>
                 </details>
-
-
             </div>
         </div>
+        
         <script>
             function myfun() {
               var x = document.getElementById("x");
@@ -162,12 +175,17 @@
               else {
                 x.style.display = "block";
               }
-              
             }
+            
+            function closefunc() {
+              var x = document.getElementById("x");
+              x.style.display = "none";
+            }
+            
             function myFunction() {
-                     var element = document.body;
-                     element.classList.toggle("dark-mode"); 
-                  }
-          </script>
+              var element = document.body;
+              element.classList.toggle("dark-mode"); 
+            }
+        </script>
     </body>
 </html>
