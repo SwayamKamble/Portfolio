@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Street Light Monitoring System Using ESP-NOW</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="images/fav_icon.png" rel="icon" type="image/png">
+    <link rel="stylesheet" href="css/lightbox.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
@@ -24,11 +26,11 @@
         nav i {
             outline: none;
             font-size: 2.5rem;
-            color: rgb(00, 50, 255);
+            color: var(--primary-color);
         }
 
         #visit {
-            color: rgb(00, 50, 255);
+            color: var(--primary-color);
         }
 
         body {
@@ -61,6 +63,7 @@
         .container h1 {
             font-size: 4rem;
             padding-top: 0;
+            color: var(--primary-color) !important;
         }
 
         .head {
@@ -82,7 +85,7 @@
             /* Max width for larger screens */
             margin: 20px auto;
             /* Center the video container */
-            border: 2px solid rgb(00, 50, 255);
+            border: 2px solid var(--primary-color);
             /* Border color */
             border-radius: 10px;
             /* Rounded corners */
@@ -101,102 +104,123 @@
             color: white;
             text-align: left;
             margin: 20px auto;
-            width: 80%;
+            width: 90%;
             max-width: 800px;
+            line-height: 1.6;
         }
 
         .project-details h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
+            font-size: 1.8rem;
+            margin: 25px 0 15px 0;
+            color: var(--primary-color);
         }
 
-        .project-details ul {
-            margin: 10px 0;
-            padding-left: 20px;
+        .project-details h3 {
+            font-size: 1.4rem;
+            margin: 20px 0 10px 0;
         }
 
-        .image-gallery {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin: 20px auto;
-            width: 80%;
+        .project-details p {
+            margin-bottom: 15px;
         }
 
-        .image-gallery img {
-            width: 150px;
-            /* Adjust the width as needed */
-            height: auto;
-            /* Maintain aspect ratio */
-            margin: 10px;
-            border-radius: 10px;
-            /* Optional: add rounded corners */
-            transition: transform 0.3s;
-            /* Smooth hover effect */
+        .project-details ul,
+        .project-details ol {
+            margin: 15px 0;
+            padding-left: 25px;
         }
 
-        .image-gallery img:hover {
-            transform: scale(1.05);
-            /* Scale image on hover */
-        }
-
-        .project-details {
-            color: white;
-            /* Default text color for dark mode */
-            text-align: left;
-            margin: 20px auto;
-            width: 80%;
-            max-width: 800px;
+        .project-details li {
+            margin-bottom: 8px;
         }
 
         .dark-mode .project-details {
-            color: black;
-            /* Change text color for light mode */
+            color: #333;
         }
 
+        .dark-mode .project-details h2 {
+            color: #0032FF;
+        }
 
-        .s_l_image1 {
-            height: 400px;
-            width: 800px;
-            margin: 0 auto;
+        /* Responsive image improvements */
+        .project-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            margin: 25px auto;
             display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        .s_l_image2 {
-            height: 400px;
-            width: 500px;
-            margin: 0 auto;
-            display: block;
-        }
-
-        .dashboard {
-            height: 400px;
-            width: 500px;
-            margin: 0 auto;
-            display: block;
-        }
+        .s_l_image1,
+        .s_l_image2,
+        .dashboard,
         .check {
-            height: 400px;
-            width: 500px;
-            margin: 0 auto;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 25px auto;
             display: block;
+            max-width: 800px;
         }
 
         .side-by-side-images {
             display: flex;
             justify-content: center;
-            align-items: center;
-            gap: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px auto;
+            width: 90%;
+            max-width: 1200px;
         }
 
-        /* .side-by-side-images .side-image {
-            height: 300px;
-            width: 200px;
+        .side-by-side-images img {
+            width: calc(50% - 20px);
+            min-width: 280px;
+            height: auto;
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             object-fit: cover;
+        }
 
-        } */
+        @media screen and (max-width: 768px) {
+            .container h1 {
+                font-size: 2.2rem;
+                padding: 0 10px;
+            }
 
-        /* Other existing styles... */
+            .project-details {
+                padding: 0 15px;
+            }
+
+            .project-details h2 {
+                font-size: 1.5rem;
+            }
+
+            .project-details h3 {
+                font-size: 1.3rem;
+            }
+
+            .project-details p,
+            .project-details li {
+                font-size: 0.95rem;
+            }
+
+            .side-by-side-images img {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+        }
+
+        /* Text justification */
+        .project-details p,
+        .project-details li p {
+            text-align: justify;
+            hyphens: auto;
+        }
     </style>
 </head>
 
@@ -207,7 +231,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="Resume.html">Portfolio</a></li>
-            <li><a href="#" id="visit">Projects</a></li>
+            <li><a href="projects.html" id="visit">Projects</a></li>
             <li><a href="getintouch.html">Contact</a></li>
         </ul>
         <img src="images/theme_sun.png" class="favico1">
@@ -217,19 +241,23 @@
             <span class="slider round"></span>
         </label>
     </nav>
-    <a href="#" class="icon" onclick="myfun()"> <i id="bar" class="fa-sharp fa-solid fa-bars"></i> </a>
-    <a href="#" class="icon" onclick="closefunc()"> <i id="bar2" class="fa-solid fa-xmark"></i> </a>
+    <a href="#" class="icon" onclick="myfun()" aria-label="Open Menu">
+        <i id="bar" class="fa-sharp fa-solid fa-bars"></i>
+    </a>
+    <a href="#" class="icon" onclick="closefunc()" aria-label="Close Menu">
+        <i id="bar2" class="fa-solid fa-xmark"></i>
+    </a>
     <div class="container">
         <h1 style="color: rgb(00, 50, 255);">Smart Street Light Monitoring System Using ESP-NOW</h1>
     </div>
 
     <!-- <div class="video-container">
-        <iframe 
+        <iframe
             src="https://www.youtube.com/embed/47xp-KqsWlY"
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen>
         </iframe>
     </div> -->
@@ -301,7 +329,7 @@
         <h2>Achievements & Recognitions</h2>
         <p>Awarded at the College Startup Expo (Engineers Day) – Recognized for its potential
             impact in smart city infrastructure.</p>
-        <img src="images/check_street_light.JPG" alt="Street Light  check image" class="check">
+        <img src="images/check_street_light.JPG" alt="Street Light check image" class="check">
 
         <h2>Conclusion</h2>
         <p>The Smart Street Light Monitoring System is a cost-effective, scalable, and intelligent solution for modern
@@ -316,11 +344,26 @@
     </div>
 
     <script>
+        function myfun() {
+            var x = document.getElementById("x");
+            document.getElementById("bar2").style.display = "block";
+            document.getElementById("bar").style.display = "none";
+            x.style.display = "flex";
+        }
+
+        function closefunc() {
+            var x = document.getElementById("x");
+            document.getElementById("bar").style.display = "block";
+            document.getElementById("bar2").style.display = "none";
+            x.style.display = "none";
+        }
+
         function myFunction() {
             var element = document.body;
             element.classList.toggle("dark-mode");
         }
     </script>
+    <script src="js/lightbox.js"></script>
 </body>
 
 </html>

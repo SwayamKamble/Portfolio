@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>Resume</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/theme.css">
     <link href="images/fav_icon.png" rel="icon" type="image/png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
@@ -31,17 +32,13 @@
             padding: 20px;
             margin: 30px;
             font-size: 3rem;
-            color: rgb(0, 50, 255);
+            color: var(--primary-color);
         }
 
         nav i {
             outline: none;
             font-size: 2.5rem;
-            color: rgb(00, 50, 255);
-        }
-
-        #visit {
-            color: rgb(00, 50, 255);
+            color: var(--primary-color);
         }
 
         body {
@@ -60,7 +57,6 @@
             margin: 10px;
             color: white;
             flex-wrap: wrap;
-
         }
 
         .container h1 {
@@ -78,13 +74,13 @@
 
         .edu {
             width: 45%;
-            border-left: 6px solid rgb(00, 50, 255);
+            border-left: 6px solid var(--primary-color);
             margin-left: 20px;
         }
 
         .exp {
             width: 45%;
-            border-left: 6px solid rgb(00, 50, 255);
+            border-left: 6px solid var(--primary-color);
             margin-left: 20px;
         }
 
@@ -142,8 +138,8 @@
             border: 0.1px solid grey;
         }
 
-        /* skiils */
-        /* progress nar */
+        /* skills */
+        /* progress bar */
         .skills {
             color: #f1f1f1;
             display: grid;
@@ -179,7 +175,7 @@
             left: 0;
             height: 100%;
             border-radius: 5px;
-            background-color: rgb(00, 50, 255);
+            background-color: var(--primary-color);
             animation: mymove 2s linear 1;
         }
 
@@ -214,15 +210,12 @@
         }
 
         .edu a {
-            color: blue;
-            /* Change link color to blue */
+            color: var(--primary-color);
             text-decoration: none;
-            /* Optional: removes underline */
         }
 
         .edu a:hover {
             text-decoration: underline;
-            /* Optional: adds underline on hover */
         }
 
         /* CSS for mobile view */
@@ -252,7 +245,7 @@
 
 <body>
     <nav>
-        <img src="images/logggg.png" class="logo">
+        <img src="images/logggg.png" class="logo" alt="Swayam Kamble Logo">
         <ul id="x">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -260,19 +253,26 @@
             <li><a href="projects.html">Projects</a></li>
             <li><a href="getintouch.html">Contact</a></li>
         </ul>
-        <img src="images/theme_sun.png" class="favico1">
-        <img src="images/theme_moon.png" class="favico2">
-        <label class="switch">
+        <img src="images/theme_sun.png" class="favico1" alt="Light Theme">
+        <img src="images/theme_moon.png" class="favico2" alt="Dark Theme">
+        <label class="switch" aria-label="Toggle Dark Mode">
             <input type="checkbox" onclick="myFunction()">
             <span class="slider round"></span>
         </label>
     </nav>
+    <a href="#" class="icon" onclick="myfun()" aria-label="Open Menu">
+        <i id="bar" class="fa-sharp fa-solid fa-bars"></i>
+    </a>
+    <a href="#" class="icon" onclick="closefunc()" aria-label="Close Menu">
+        <i id="bar2" class="fa-solid fa-xmark"></i>
+    </a>
+
     <div class="head">
         <h1>Portfolio</h1>
     </div>
     <div class="container" style="border: none;">
         <div class="edu">
-            <h1 style="color: rgb(00, 50, 255);">Education</h1>
+            <h1 style="color: var(--primary-color);">Education</h1>
             <div class="box">
                 <h2>B.Tech. in IIoT</h2>
                 <p>St. Vincent Pallotti College of Engineering and Technology</p>
@@ -287,7 +287,7 @@
             </div>
         </div>
         <div class="exp">
-            <h1 style="color: rgb(00, 50, 255);">Experience</h1>
+            <h1 style="color: var(--primary-color);">Experience</h1>
             <div class="box">
                 <h2>Project Intern</h2>
                 <p> Signal Processing and Communication Research Center (SPCRC) – International Institute of Information
@@ -298,7 +298,7 @@
 
     <div class="container" style="border: none;">
         <div class="edu">
-            <h1 style="color: rgb(00, 50, 255);">Certifications</h1>
+            <h1 style="color: var(--primary-color);">Certifications</h1>
             <div class="box">
                 <h2>Python Certification</h2>
                 <p>CodeChef</p>
@@ -343,7 +343,7 @@
             </div>
         </div>
         <div class="exp">
-            <h1 style="color: rgb(00, 50, 255);">Skills</h1>
+            <h1 style="color: var(--primary-color);">Skills</h1>
             <div class="box">
                 <h2>C Programming</h2>
             </div>
@@ -376,15 +376,18 @@
     <script>
         function myfun() {
             var x = document.getElementById("x");
-            var y = document.getElementById("bar");
-            if (x.style.display == "block") {
-                x.style.display = "none";
-            }
-            else {
-                x.style.display = "block";
-            }
-
+            document.getElementById("bar2").style.display = "block";
+            document.getElementById("bar").style.display = "none";
+            x.style.display = "flex";
         }
+
+        function closefunc() {
+            var x = document.getElementById("x");
+            document.getElementById("bar").style.display = "block";
+            document.getElementById("bar2").style.display = "none";
+            x.style.display = "none";
+        }
+
         function myFunction() {
             var element = document.body;
             element.classList.toggle("dark-mode");

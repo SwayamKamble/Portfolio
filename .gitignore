@@ -1,0 +1,15 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.log
+
+# Sync scripts
+sync_github.bat
+sync_github.sh

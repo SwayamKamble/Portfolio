@@ -1,0 +1,97 @@
+/* Theme colors - Change these variables to easily update your color scheme */
+:root {
+  /* Primary theme colors */
+  --primary-color: #6A0DAD; /* Purple - previously was #0032FF (blue) */
+  --primary-color-light: #9370DB; /* Medium purple */
+  --primary-color-dark: #4B0082; /* Indigo */
+  --accent-color: #E6E6FA; /* Lavender */
+  
+  /* Text and background colors */
+  --text-light: white;
+  --text-dark: rgba(0, 0, 0, 0.747);
+  --bg-dark: black;
+  --bg-light: white;
+  
+  /* Gradient colors */
+  --gradient-start: #9932CC; /* Dark orchid */
+  --gradient-middle: #7644ff; /* Previously kept */
+  --gradient-end: #fd4766; /* Previously kept */
+  
+  /* UI element colors */
+  --border-color: var(--primary-color);
+  --hover-color: var(--primary-color-light);
+  --active-color: var(--primary-color-dark);
+  
+  /* Box shadow */
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --hover-shadow: 0 6px 12px rgba(106, 13, 173, 0.3);
+}
+
+/* Dark mode overrides */
+.dark-mode {
+  --bg-current: var(--bg-light);
+  --text-current: var(--text-dark);
+}
+
+/* Common theme-related styles */
+.highlight, 
+#visit, 
+.head h1, 
+.container h1,
+.contact-heading h1,
+.about-heading h1,
+.project-details h2 {
+  color: var(--primary-color);
+}
+
+nav ul li a:hover,
+.hover-underline-animation {
+  color: var(--primary-color);
+}
+
+nav ul li a:after,
+.hover-underline-animation::after,
+.name:after {
+  background: var(--primary-color);
+}
+
+.btn, 
+#btn,
+.contact-form button {
+  background-color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.btn:hover,
+#btn:hover,
+.contact-form button:hover {
+  background: transparent;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+input:checked + .slider {
+  background-color: var(--primary-color);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--primary-color);
+}
+
+.boxes details:hover {
+  background-color: var(--primary-color);
+}
+
+/* Image gallery scrollbar */
+.image-gallery::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+}
+
+.image-gallery {
+  scrollbar-color: var(--primary-color) rgba(0, 0, 0, 0.2);
+}
+
+/* Project styling */
+.video-container {
+  border: 2px solid var(--primary-color);
+}
