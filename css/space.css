@@ -1,0 +1,31 @@
+/* Styles for enhanced space background */
+body {
+  background-color: rgb(3, 0, 10) !important; /* Even darker for better contrast with galaxies */
+}
+
+/* Make sure content stays on top of the background */
+.content, nav, .container, .project-details, .about-container, .contact-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Make text more readable against the animated background */
+p, li, h2, h3 {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Dark text gets a light shadow in dark mode */
+.dark-mode p, .dark-mode li, .dark-mode h2, .dark-mode h3 {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Ensure the space canvas stays behind everything */
+#space-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
